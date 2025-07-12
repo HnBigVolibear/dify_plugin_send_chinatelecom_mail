@@ -1,7 +1,9 @@
 ## dify_plugin_send_chinatelecom_mail
+### 自制Dify插件：中国电信OA邮件发送器
+#### 注：发行版插件安装包，直接放在了本项目仓库里！
 ![img](./_assets/dify.png)  ![img](./_assets/mail.png)
 
-**Author:** HnBigVolibear 湖南大白熊
+**Author:** HnBigVolibear 湖南大白熊  
 
 **Version:** 0.0.2
 
