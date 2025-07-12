@@ -14,5 +14,4 @@
 ### 一个Dify插件，用于快速发送中国电信OA办公邮件，支持抄送、密送、支持多附件，让你可以专注于Dify工作流的业务流构建
 
 附：中国电信OA办公邮箱官网：
-https://mail.chinatelecom.cn/mail/#/user/login
-
+https://mail.chinatelecom.cn/mail/#/user/login 
