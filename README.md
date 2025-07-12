@@ -1,5 +1,5 @@
 ## dify_plugin_send_chinatelecom_mail
-![img](./_assets/dify.png)
+![img](./_assets/dify.png)  ![img](./_assets/mail.png)
 
 **Author:** HnBigVolibear 湖南大白熊
 
@@ -15,4 +15,4 @@
 
 附：中国电信OA办公邮箱官网：
 https://mail.chinatelecom.cn/mail/#/user/login
-![img](./_assets/mail.png)
+
