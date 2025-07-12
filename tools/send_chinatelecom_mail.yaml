@@ -1,0 +1,155 @@
+identity:
+  name: send_chinatelecom_mail
+  author: HnBigVolibear
+  label:
+    en_US: send_chinatelecom_mail
+    zh_Hans: 中国电信OA邮件发送器
+    pt_BR: send_chinatelecom_mail
+description:
+  human:
+    en_US: send chinatelecom mail for us
+    zh_Hans: 中国电信OA邮件发送器，支持抄送、支持附件（建议内网环境使用）
+    pt_BR: send chinatelecom mail for us
+  llm: 中国电信OA邮件发送器，支持抄送、支持附件
+parameters:
+  - name: sender_email
+    type: string
+    required: true
+    label:
+      en_US: your oa email
+      zh_Hans: 发件人邮箱
+      pt_BR: your oa email
+    human_description:
+      en_US: your oa email
+      zh_Hans: 发件人邮箱(也就是你自己的邮箱), 比如xxx@chinatelecom.cn
+      pt_BR: your oa email
+    llm_description: 发件人邮箱
+    form: llm
+  - name: email_password
+    type: secret-input
+    required: true
+    label:
+      en_US: your oa email password
+      zh_Hans: 发件人邮箱授权码
+      pt_BR: your oa email password
+    human_description:
+      en_US: your oa email password, not login password
+      zh_Hans: 发件人邮箱授权码，注意不是邮箱登陆密码！您可自行前往OA邮箱官网里查看或创建您的邮箱授权码！
+      pt_BR: your oa email password, not login password
+    llm_description: 发件人邮箱授权码
+    form: llm
+  - name: sender_nickname
+    type: string
+    required: false
+    label:
+      en_US: nickname
+      zh_Hans: 发件人昵称
+      pt_BR: nickname
+    human_description:
+      en_US: nickname
+      zh_Hans: 发件人昵称, 你自行随意设置即可。比如“Dify数字员工”, 为空则等同于你的邮箱
+      pt_BR: nickname
+    llm_description: 发件人昵称
+    form: llm
+  - name: recipients
+    type: string
+    required: true
+    label:
+      en_US: recipients
+      zh_Hans: 收件人(可多个)
+      pt_BR: recipients
+    human_description:
+      en_US: recipients
+      zh_Hans: 收件人邮箱(可多个), 比如xxx@chinatelecom.cn, 多个邮箱请用逗号或分号隔开即可
+      pt_BR: recipients
+    llm_description: 收件人邮箱(可多个), 多个邮箱请用逗号或分号隔开即可
+    form: llm
+  - name: cc_recipients
+    type: string
+    required: false
+    label:
+      en_US: cc_recipients
+      zh_Hans: 抄送人(可多个)
+      pt_BR: cc_recipients
+    human_description:
+      en_US: cc_recipients
+      zh_Hans: 抄送人邮箱(可多个), 比如xxx@chinatelecom.cn, 多个邮箱请用逗号或分号隔开即可
+      pt_BR: cc_recipients
+    llm_description: 抄送人邮箱(可多个), 多个邮箱请用逗号或分号隔开即可
+    form: llm
+  - name: bcc_recipients
+    type: string
+    required: false
+    label:
+      en_US: bcc_recipients
+      zh_Hans: 密送人(可多个)
+      pt_BR: bcc_recipients
+    human_description:
+      en_US: bcc_recipients
+      zh_Hans: 密送人邮箱(可多个), 比如xxx@chinatelecom.cn, 多个邮箱请用逗号或分号隔开即可
+      pt_BR: bcc_recipients
+    llm_description: 密送人邮箱(可多个), 多个邮箱请用逗号或分号隔开即可
+    form: llm
+  - name: mail_subject
+    type: string
+    required: true
+    label:
+      en_US: mail_subject
+      zh_Hans: 邮件主题
+      pt_BR: mail_subject
+    human_description:
+      en_US: mail_subject
+      zh_Hans: 邮件主题
+    llm_description: 邮件主题
+    form: llm
+  - name: mail_body
+    type: string
+    required: true
+    label:
+      en_US: mail_body
+      zh_Hans: 邮件正文
+      pt_BR: mail_body
+    human_description:
+      en_US: mail_body
+      zh_Hans: 邮件正文
+    llm_description: 邮件正文
+    form: llm
+  - name: is_html
+    type: select
+    required: true
+    default: '否'
+    label:
+      en_US: is_html
+      zh_Hans: 是否以HTML正文形式发送
+      pt_BR: is_html
+    human_description:
+      en_US: is_html
+      zh_Hans: 【进阶玩法】是否以HTML正文形式发送。选是，则发送HTML邮件，高级玩法，新手慎选！
+      pt_BR: is_html
+    llm_description: 是否以HTML正文形式发送
+    form: form
+    options:
+      - label: 
+          en_US: 'Yes'
+          zh_Hans: '是'
+        value: '是'
+      - label: 
+          en_US: 'No'
+          zh_Hans: '否'
+        value: '否'
+  - name: send_files
+    type: files
+    required: false
+    label:
+      en_US: send files
+      zh_Hans: 邮件附件
+      pt_BR: send files
+    human_description:
+      en_US: send files
+      zh_Hans: 邮件附件(支持多选、也支持诸如HTTP请求获取到的files文件变量)
+      pt_BR: send files
+    llm_description: 邮件附件(支持多选、也支持诸如HTTP请求获取到的files文件变量)
+    form: llm
+extra:
+  python:
+    source: tools/send_chinatelecom_mail.py

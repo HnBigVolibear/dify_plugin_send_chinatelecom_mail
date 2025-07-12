@@ -1,0 +1,48 @@
+identity:
+  author: HnBigVolibear
+  name: send_chinatelecom_mail
+  label:
+    en_US: send_chinatelecom_mail
+    zh_Hans: 中国电信OA邮件发送器
+    pt_BR: send_chinatelecom_mail
+  description:
+    en_US: send chinatelecom mail for us
+    zh_Hans: 中国电信OA邮件发送器，支持抄送、支持附件、支持HTML格式发送（建议内网环境使用）
+    pt_BR: send chinatelecom mail for us
+  icon: mail.png
+  tags: # 标签，用于前端展示
+    - utilities
+    - social
+    - productivity
+credentials_for_provider:
+  smtp_server:
+    type: text-input
+    required: true
+    default: smtp.chinatelecom.cn
+    label:
+      en_US: smtp server URL
+      zh_Hans: SMTP服务器地址
+    placeholder:
+      en_US: Enter your smtp server URL
+      zh_Hans: 输入OA邮箱的SMTP服务器地址
+    help:
+      en_US: Enter your smtp server URL
+      zh_Hans: 输入OA邮箱的SMTP服务器地址（或输入你的内网转发节点服务器地址）
+  smtp_port:
+    type: text-input
+    required: true
+    default: '465'
+    label:
+      en_US: smtp port
+      zh_Hans: SMTP服务端口
+    placeholder:
+      en_US: Enter your smtp port
+      zh_Hans: 输入你的SMTP服务端口
+    help:
+      en_US: Enter your smtp port
+      zh_Hans: 输入你的SMTP服务端口，默认是465端口、默认启用SSL。范围0-65535
+tools:
+  - tools/send_chinatelecom_mail.yaml
+extra:
+  python:
+    source: provider/send_chinatelecom_mail.py
