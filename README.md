@@ -1,7 +1,10 @@
-## send_chinatelecom_mail
+## dify_plugin_send_chinatelecom_mail
 ![img](./_assets/dify.png)
+
 **Author:** HnBigVolibear 湖南大白熊
+
 **Version:** 0.0.2
+
 **Type:** tool
 
 ![img](./_assets/ct.png)  
